@@ -60,3 +60,4 @@ connect();
 
 require('./locations');
 
+require('./users');
