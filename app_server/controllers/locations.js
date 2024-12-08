@@ -4,7 +4,7 @@ const apiOptions = {
   server: 'http://localhost:3000'
 };
 if(process.env.NODE_ENV === 'production'){
-  apiOptions.server  = 'https://calm-khapse-6ebbfe.netlify.app/';
+  apiOptions.server  = 'https://loc8r-api-9qwb.onrender.com';
 }
 
 const homelist = (req, res) => {
