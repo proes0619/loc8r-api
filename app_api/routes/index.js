@@ -2,14 +2,15 @@ const express = require('express');
 const router = express.Router();
 const { expressjwt: jwt } = require('express-jwt');
 const auth = jwt({
-  secret: process.env.JWT_SECRET,
-  algorithms: ['HS256'],
-  userProperty: 'req.auth'
+    secret: process.env.JWT_SECRET,
+    algorithms: ['HS256'], //default algorithm
+    // userProperty: 'payload'
+    userProperty: 'req.auth' //default
 });
+
 const ctrlLocations = require('../controllers/locations');
 const ctrlReviews = require('../controllers/reviews');
 const ctrlAuth = require('../controllers/authentication');
-;
 
 // locations
 router
@@ -38,3 +39,4 @@ router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
 
 module.exports = router;
+
